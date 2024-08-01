@@ -1,0 +1,20 @@
+python3
+hugo
+chrome
+spotify
+minecraft
+blender
+gpick
+cuemix
+cura
+orca slicer
+gimp
+discord
+obs
+libreoffice
+zoom
+qdirstat
+ranger
+vm support
+vlc
+power menu
