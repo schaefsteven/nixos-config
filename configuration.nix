@@ -63,6 +63,10 @@
 
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake ~/.nix";
+      nivm = "nvim";
+    };
   };
 
   users.defaultUserShell = pkgs.zsh;
