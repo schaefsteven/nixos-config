@@ -49,8 +49,6 @@
 
     # DE stuff
     i3
-    nitrogen
-    rofi
     base16-schemes
 
     # for mount.cifs, required unless domain name resolution is not needed

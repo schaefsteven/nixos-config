@@ -27,6 +27,7 @@
     orca-slicer
     git-credential-manager
     dig
+    rofimoji
 
     pavucontrol
     # # You can also create simple shell scripts directly inside your
@@ -54,6 +55,15 @@
       theme_background = false;
       update_ms = 500;
       vim_keys = true;
+    };
+  };
+
+  programs.rofi = {
+    enable = true;
+    plugins = [ pkgs.rofimoji ];
+    extraConfig = {
+      m = "primary";
+      combi-modi = "drun,emoji:rofimoji";
     };
   };
 
