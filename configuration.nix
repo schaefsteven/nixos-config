@@ -89,7 +89,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     image = ./background-image;
-    imageScalingMode = "fill";
+    # imageScalingMode = "center"; # This currently only is supported by sway
   };
 
 
@@ -110,38 +110,33 @@
       variant = "";
     };
 
-  desktopManager = {
-    xterm.enable = false;
-    # wallpaper/desktop-background (uses ~/.background-image)
-    # wallpaper = { overridden by stylix
-      # mode = "fill";
-      # combineScreens = true;
-    # };
-  };
- 
-  displayManager = {
+    desktopManager = {
+      xterm.enable = false;
+    };
+   
+    displayManager = {
       # lightdm.background = "#000000"; # overridden by stylix
       setupCommands = ''
         LEFT='HDMI-A-1'
-	CENTER='DisplayPort-0'
-	RIGHT='HDMI-A-0'
-	${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --mode '3840x2160' --dpi 120 --scale 1 --primary
-	${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --rotate right --scale 1.25 --left-of $CENTER
-	${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --scale 1.25 --right-of $CENTER
-	${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --pos 0x0
-	${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --pos 1350x0
-	${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 5190x0
+  	CENTER='DisplayPort-0'
+  	RIGHT='HDMI-A-0'
+  	${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --mode '3840x2160' --dpi 120 --scale 1 --primary
+  	${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --rotate right --scale 1.25 --left-of $CENTER
+  	${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --scale 1.25 --right-of $CENTER
+  	${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --pos 0x0
+  	${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --pos 1350x0
+  	${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 5190x0
       '';
-  };
-
-  windowManager.i3 = {
-    enable = true;
-    configFile = ./i3config;
-    extraPackages = with pkgs; [
-      dmenu #application launcher most people use
-      i3status # gives you the default i3 status bar
-      i3lock #default i3 screen locker
-      i3blocks #if you are planning on using i3blocks over i3status
+    };
+  
+    windowManager.i3 = {
+      enable = true;
+      configFile = ./i3config;
+      extraPackages = with pkgs; [
+        dmenu #application launcher most people use
+        i3status # gives you the default i3 status bar
+        i3lock #default i3 screen locker
+        i3blocks #if you are planning on using i3blocks over i3status
       ];
     };
   };
@@ -181,6 +176,13 @@
     members = [ "usr" ];
     gid = 100;
   };
+
+  security.sudo.extraConfig = ''
+    # sudo auth applies to all terminals
+    Defaults !tty_tickets
+    # 60 minutes before having to re-auth
+    Defaults timestamp_timeout = 60
+  '';
 
   home-manager = {
     useGlobalPkgs = true; # Originally set to allow unfree packages to be installed by home-manager
