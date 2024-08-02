@@ -43,6 +43,9 @@
   environment.systemPackages = with pkgs; [
     neovim
     alacritty
+    python3
+    python312Packages.pip
+    thefuck
 
     # DE stuff
     i3
@@ -69,14 +72,16 @@
       ll = "ls -lhog --group-directories-first";
       la = "ls -alhog --group-directories-first";
       nivm = "nvim";
+      py = "python3";
       gaac = "git add . && git commit";
       nrs = "sudo nixos-rebuild switch --flake ~/.nix";
     };
     ohMyZsh = {
       enable = true;
       theme = "gozilla";
-      plugins = ["git"];
+      plugins = ["git" "thefuck"];
     };
+    shellInit = "fastfetch";
   };
 
   # color schemes themes
@@ -183,6 +188,7 @@
     users = {
       "usr" = import ./home.nix;
     };
+    backupFileExtension = "backup";
   };
 
   # Stuff from default configuration.nix:
