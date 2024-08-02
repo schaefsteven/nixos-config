@@ -61,16 +61,24 @@
     VISUAL = "nvim";
   };
 
+  users.defaultUserShell = pkgs.zsh;
+  
   programs.zsh = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/.nix";
+      ll = "ls -lhog --group-directories-first";
+      la = "ls -alhog --group-directories-first";
       nivm = "nvim";
+      gaac = "git add . && git commit";
+      nrs = "sudo nixos-rebuild switch --flake ~/.nix";
+    };
+    ohMyZsh = {
+      enable = true;
+      theme = "gozilla";
+      plugins = ["git"];
     };
   };
 
-  users.defaultUserShell = pkgs.zsh;
-  
   # color schemes themes
   stylix = { 
     enable = true;
