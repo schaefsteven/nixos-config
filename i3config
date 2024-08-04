@@ -292,7 +292,8 @@ default_floating_border pixel 3
 exec --no-startup-id picom
 
 # rofi
-bindsym $mod+Return exec --no-startup-id rofi -show combi -font "mono 16"
+bindsym $mod+Return exec --no-startup-id rofi -show combi -modi "calc#combi" -calc-command "echo -n '{result}' | xclip -selection clipboard" -automatic-save-to-history
+bindsym $mod+$alt+p exec --no-startup-id rofi -show power -modi "power:rofi-power-menu --choices=shutdown/reboot/suspend/logout"
 
 # Focus the main workspace
 exec --no-startup-id i3-msg 'workspace Main'

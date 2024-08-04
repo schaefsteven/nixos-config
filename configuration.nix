@@ -1,7 +1,5 @@
 # todo
 # alacritty config
-# rofi
-# zsh - and rc
 # uBlacklist nixos
 
 # ideas
@@ -46,6 +44,7 @@
     python3
     python312Packages.pip
     thefuck
+    nerdfonts
 
     # DE stuff
     i3
@@ -53,6 +52,10 @@
 
     # for mount.cifs, required unless domain name resolution is not needed
     cifs-utils
+  ];
+
+  fonts.packages = with pkgs; [
+    nerdfonts
   ];
 
   # boot.initrd.kernelModules = [ "amdgpu" ];
