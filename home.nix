@@ -18,6 +18,8 @@
   home.packages = with pkgs; [
     fastfetch
     discord
+    google-chrome
+    ungoogled-chromium
     cowsay
     lolcat
     obsidian

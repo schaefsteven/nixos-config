@@ -76,6 +76,8 @@
       py = "python3";
       gaac = "git add . && git commit";
       nrs = "sudo nixos-rebuild switch --flake ~/.nix";
+      xclip = "xclip -selection clipboard";
+      nixgit = "git -C ~/.nix";
     };
     ohMyZsh = {
       enable = true;
