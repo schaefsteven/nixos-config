@@ -24,7 +24,7 @@
     nixosConfigurations.arion = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./hosts/arion/configuration.nix
 	inputs.home-manager.nixosModules.default
 	inputs.stylix.nixosModules.stylix
       ];

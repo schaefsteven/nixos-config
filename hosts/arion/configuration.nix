@@ -11,20 +11,17 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./firefox.nix
+    [ ./hardware-configuration.nix
+      ../../modules/firefox.nix
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   sops = {
-    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/usr/.config/sops/age/keys.txt";
     secrets = {
@@ -91,7 +88,7 @@
   stylix = { 
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-    image = ./background-image;
+    image = ../../background-image;
     # imageScalingMode = "center"; # This currently only is supported by sway
   };
 
@@ -134,7 +131,7 @@
   
     windowManager.i3 = {
       enable = true;
-      configFile = ./i3config;
+      configFile = ../../configs/i3config;
       extraPackages = with pkgs; [
         dmenu #application launcher most people use
         i3status # gives you the default i3 status bar
@@ -191,7 +188,7 @@
     useGlobalPkgs = true; # Originally set to allow unfree packages to be installed by home-manager
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "usr" = import ./home.nix;
+      "usr" = import ../../home.nix;
     };
     backupFileExtension = "backup";
   };
