@@ -255,6 +255,8 @@
     # wireplumber.enable = true;
   };
 
+  services.teamviewer.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
   };

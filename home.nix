@@ -19,6 +19,7 @@
     fastfetch
     discord
     google-chrome
+    teamviewer
     ungoogled-chromium
     cowsay
     lolcat
