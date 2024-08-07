@@ -34,6 +34,7 @@
     rofi-calc
     rofi-power-menu
     xclip
+    inxi
 
     pavucontrol
     # # You can also create simple shell scripts directly inside your
