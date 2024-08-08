@@ -62,34 +62,9 @@
     VISUAL = "nvim";
   };
 
+  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -lhog --group-directories-first";
-      la = "ls -alhog --group-directories-first";
-      nivm = "nvim";
-      py = "python3";
-      gaac = "git add . && git commit";
-      nrs = "sudo nixos-rebuild switch --flake ~/.nix";
-      xclip = "xclip -selection clipboard";
-      nixgit = "git -C ~/.nix";
-      tuxsay = "cowsay -f tux";
-    };
-    ohMyZsh = {
-      enable = true;
-      theme = "gozilla";
-      plugins = ["git" "thefuck"];
-    };
-    shellInit = ''
-      fastfetch
-      echo
-      spaces="                                               "
-      date +"''${spaces}%A, %B %d : %Y/%m/%d"
-      '';
-  };
-
   # color schemes themes
   stylix = { 
     enable = true;

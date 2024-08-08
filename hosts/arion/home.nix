@@ -37,13 +37,33 @@
     inxi
 
     pavucontrol
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
+
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -lhog --group-directories-first";
+      la = "ls -alhog --group-directories-first";
+      nivm = "nvim";
+      py = "python3";
+      gaac = "git add . && git commit";
+      nrs = "sudo nixos-rebuild switch --flake ~/.nix";
+      xclip = "xclip -selection clipboard";
+      nixgit = "git -C ~/.nix";
+      tuxsay = "cowsay -f tux";
+    };
+    oh-my-zsh = {
+      enable = true;
+      theme = "gozilla";
+      plugins = ["git" "thefuck"];
+    };
+    initExtra = ''
+      fastfetch
+      echo
+      spaces="                                               "
+      date +"''${spaces}%A, %B %d : %Y/%m/%d"
+      '';
+  };
 
   programs.git = {
     enable = true;
