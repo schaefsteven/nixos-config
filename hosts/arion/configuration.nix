@@ -81,7 +81,12 @@
       theme = "gozilla";
       plugins = ["git" "thefuck"];
     };
-    shellInit = "fastfetch";
+    shellInit = ''
+      fastfetch
+      echo
+      spaces="                                               "
+      date +"''${spaces}%A, %B %d : %Y/%m/%d"
+      '';
   };
 
   # color schemes themes
