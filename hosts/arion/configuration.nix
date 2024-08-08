@@ -75,6 +75,7 @@
       nrs = "sudo nixos-rebuild switch --flake ~/.nix";
       xclip = "xclip -selection clipboard";
       nixgit = "git -C ~/.nix";
+      tuxsay = "cowsay -f tux";
     };
     ohMyZsh = {
       enable = true;
@@ -193,7 +194,7 @@
     useGlobalPkgs = true; # Originally set to allow unfree packages to be installed by home-manager
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "usr" = import ../../home.nix;
+      "usr" = import ./home.nix;
     };
     backupFileExtension = "backup";
   };
