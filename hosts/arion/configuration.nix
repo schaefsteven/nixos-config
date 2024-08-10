@@ -12,7 +12,6 @@
 {
   imports =
     [ ./hardware-configuration.nix
-      ../../modules/firefox.nix
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
     ];
@@ -62,7 +61,7 @@
     VISUAL = "nvim";
   };
 
-  programs.zsh.enable = true;
+  programs.zsh.enable = true; # zsh is configured in home-manager, but this has to be here for defaultUserShell to work
   users.defaultUserShell = pkgs.zsh;
   
   # color schemes themes
@@ -138,11 +137,7 @@
       "uid=${toString config.users.users.usr.uid}"
       "gid=${toString config.users.groups.users.gid}"
     ];
-    # options = let
-      # automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
-      # in ["${automount_opts},credentials=/etc/nixos/smb-secrets,uid=${toString config.users.users.usr.uid},gid=${toString config.users.groups.users.gid}"];
   };
-
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.usr = {
@@ -174,8 +169,6 @@
     backupFileExtension = "backup";
   };
 
-  # Stuff from default configuration.nix:
-
   # Bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -195,7 +188,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      gfxmodeEfi = "2560x1440";
+      gfxmodeEfi = "3840x2160";
       fontSize = 48;
       timeoutStyle = "menu";
     };
@@ -238,32 +231,8 @@
 
   services.teamviewer.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

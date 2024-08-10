@@ -13,7 +13,6 @@
 {
   programs.firefox = {
     enable = true;
-    languagePacks = [ "de" "en-US" ];
 
     /* ---- POLICIES ---- */
     # Check about:policies#documentation for options.
