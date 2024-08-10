@@ -188,7 +188,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      gfxmodeEfi = "3840x2160";
+      gfxmodeEfi = "2560x1440";
       fontSize = 48;
       timeoutStyle = "menu";
     };
