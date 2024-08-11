@@ -35,19 +35,9 @@
   '';
 
   environment.systemPackages = with pkgs; [
-    neovim
-    alacritty
-    python3
-    python312Packages.pip
-    thefuck
     nerdfonts
-
-    # DE stuff
-    i3
-    base16-schemes
-
-    # for mount.cifs, required unless domain name resolution is not needed
-    cifs-utils
+    base16-schemes # for use with stylix
+    cifs-utils # for mounting NAS, etc
   ];
 
   fonts.packages = with pkgs; [

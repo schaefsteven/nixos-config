@@ -21,6 +21,11 @@
   ];
 
   home.packages = with pkgs; [
+    neovim
+    alacritty
+    python3
+    python312Packages.pip
+    thefuck
     fastfetch
     discord
     google-chrome
