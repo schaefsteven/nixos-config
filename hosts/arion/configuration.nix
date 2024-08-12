@@ -1,15 +1,8 @@
-# todo
-# alacritty config
-# uBlacklist nixos
-
-# ideas
-# boot.plymouth.enable?
-# replace monitor names in i3config?
-
-
 { config, pkgs, inputs, ... }:
 
 {
+  networking.hostName = "arion";
+
   imports =
     [ ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
@@ -135,7 +128,6 @@
     };
   };
 
-  networking.hostName = "arion"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
