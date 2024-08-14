@@ -47,7 +47,6 @@
     google-chrome
     obsidian
     orca-slicer
-    teamviewer
     ungoogled-chromium
     zoom-us
 
