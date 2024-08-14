@@ -30,7 +30,6 @@
     uid = 1000;
     description = "usr";
     extraGroups = [ "networkmanager" "wheel" ];
-    #packages = with pkgs; [];
   };
 
   users.groups.users = {
