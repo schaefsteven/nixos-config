@@ -39,6 +39,8 @@
     sops
     thefuck
     xclip
+    pandoc
+    texliveTeTeX
 
     # desktop apps
     discord
