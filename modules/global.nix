@@ -1,6 +1,12 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    ./btop.nix
+    ./zsh.nix
+    ./git.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     nerdfonts
     base16-schemes # for use with stylix
@@ -25,6 +31,7 @@
   programs.zsh.enable = true; # zsh is configured in home-manager, but this has to be here for defaultUserShell to work
   users.defaultUserShell = pkgs.zsh;
 
+
   users.users.usr = {
     isNormalUser = true;
     uid = 1000;
@@ -48,6 +55,11 @@
     useGlobalPkgs = true; # Originally set to allow unfree packages to be installed by home-manager
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
+    users.usr = {
+      home.username = "usr";
+      home.homeDirectory = "/home/usr";
+      programs.home-manager.enable = true;
+    };
   };
 
   networking.networkmanager.enable = true;

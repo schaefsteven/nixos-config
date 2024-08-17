@@ -19,14 +19,12 @@
       ../../modules/global.nix
       ../../modules/i3.nix
       ../../modules/teamviewer.nix
-      ../../modules/zsh.nix
     ];
 
   home-manager.users.usr = {
     home.stateVersion = "24.05"; # Should not change after install
 
     imports = [
-      ../../modules/home-common.nix
       ../../modules/home-desktop.nix
     ];
 
