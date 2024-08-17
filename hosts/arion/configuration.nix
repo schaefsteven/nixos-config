@@ -19,6 +19,7 @@
       ../../modules/conf-common.nix
       ../../modules/i3.nix
       ../../modules/teamviewer.nix
+      ../../modules/zsh.nix
     ];
 
   sops = {
