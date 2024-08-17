@@ -3,24 +3,64 @@
 {
   networking.hostName = "arion";
 
-  system.stateVersion = "23.11"; # Probably should never change after install
+  system.stateVersion = "23.11"; # Should not change after install
 
   # networking.wireless.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  home-manager.users = { "usr" = import ./home.nix; };
+  # home-manager.users = { "usr" = import ./home.nix; };
 
   imports =
     [ ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
-      ../../modules/conf-common.nix
+      ../../modules/global.nix
       ../../modules/i3.nix
       ../../modules/teamviewer.nix
       ../../modules/zsh.nix
     ];
+
+  home-manager.users.usr = {
+    home.stateVersion = "24.05"; # Should not change after install
+
+    imports = [
+      ../../modules/home-common.nix
+      ../../modules/home-desktop.nix
+    ];
+
+    home.packages = with pkgs; [
+      alacritty
+  
+      # terminal apps
+      cowsay
+      dig
+      fastfetch
+      inxi
+      lolcat
+      neovim
+      python3
+      python312Packages.pip
+      sops
+      thefuck
+      xclip
+      pandoc
+      texliveTeTeX
+  
+      # desktop apps
+      discord
+      google-chrome
+      obsidian
+      orca-slicer
+      ungoogled-chromium
+      zoom-us
+  
+      # desktop utilities
+      gpick
+      pavucontrol
+    ];
+  };
 
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
