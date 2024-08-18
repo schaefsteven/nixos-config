@@ -1,20 +1,14 @@
-python3
-hugo
-chrome
-spotify
-minecraft
 blender
-gpick
 cuemix
-cura
-orca slicer
 gimp
-discord
-obs
+hugo
 libreoffice
-zoom
+media player
+minecraft
+npm
+obs
 qdirstat
 ranger
+spotify
+ssh
 vm support
-vlc
-power menu
