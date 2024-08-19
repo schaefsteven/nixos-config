@@ -21,6 +21,14 @@
       ../../modules/teamviewer.nix
     ];
 
+  home-manager.sharedModules = [ {
+      home.packages = with pkgs; [
+        qdirstat
+        neovim
+      ];
+    }
+  ];
+
   home-manager.users.usr = {
     home.stateVersion = "24.05"; # Should not change after install
 
@@ -37,7 +45,6 @@
       fastfetch
       inxi
       lolcat
-      neovim
       python3
       python312Packages.pip
       sops
