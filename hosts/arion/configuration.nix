@@ -16,7 +16,7 @@
     [ ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
-      ../../modules/global.nix
+      ../../modules/nixos-core
       ../../modules/i3.nix
       ../../modules/teamviewer.nix
     ];
@@ -34,6 +34,7 @@
 
     imports = [
       ../../modules/home-desktop.nix
+      ../../modules/hm-main-user-core
     ];
 
     home.packages = with pkgs; [
