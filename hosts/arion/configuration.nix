@@ -41,18 +41,20 @@
       alacritty
   
       # terminal apps
+      bashmount
       cowsay
       dig
       fastfetch
       inxi
       lolcat
+      pandoc
       python3
       python312Packages.pip
       sops
-      thefuck
-      xclip
-      pandoc
       texliveTeTeX
+      thefuck
+      tree
+      xclip
   
       # desktop apps
       discord
@@ -65,7 +67,15 @@
       # desktop utilities
       gpick
       pavucontrol
+      ventoy-full
     ];
+
+    home.file.".config/bashmount/config" = {
+      text = ''
+        show_internal='0'
+      '';
+    };
+
   };
 
   sops = {
