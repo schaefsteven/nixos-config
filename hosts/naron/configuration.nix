@@ -73,10 +73,8 @@
   services.xserver.enable = true;
 
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma5 = { 
-    enable = true;
-    bigscreen.enable = true;
-  };
+  services.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma5.bigscreen.enable = true;
 
   services.openssh.enable = true;
 
