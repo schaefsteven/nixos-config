@@ -75,7 +75,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma5 = { 
     enable = true;
-    bigsceen.enable = true;
+    bigscreen.enable = true;
   };
 
   services.openssh.enable = true;
