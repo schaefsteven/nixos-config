@@ -29,5 +29,13 @@
 	inputs.stylix.nixosModules.stylix
       ];
     };
+    nixosConfigurations.naron = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/naron/configuration.nix
+	inputs.home-manager.nixosModules.default
+	# inputs.stylix.nixosModules.stylix
+      ];
+    };
   };
 }
