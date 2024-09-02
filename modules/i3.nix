@@ -4,7 +4,6 @@
   # i3
   services.xserver = {
     enable = true;
-    videoDrivers = [ "amdgpu" ];
     deviceSection = ''Option "TearFree" "true"'';
 
     # Keyboard layout and mapping
