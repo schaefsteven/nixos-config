@@ -93,6 +93,7 @@
         ${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --pos 0x0
         ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --pos 1350x0
         ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 5190x0
+	${pkgs.nitrogen}/bin/nitrogen --restore
       '';
     };
   };
@@ -110,7 +111,7 @@
   stylix = { 
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-    image = ../../background-image;
+    image = ../../assets/black.jpg;
     # imageScalingMode = "center"; # This currently only is supported by sway
   };
 
