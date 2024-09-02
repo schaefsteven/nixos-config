@@ -29,6 +29,14 @@
 	inputs.stylix.nixosModules.stylix
       ];
     };
+    nixosConfigurations.brahe = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/brahe/configuration.nix
+	inputs.home-manager.nixosModules.default
+	inputs.stylix.nixosModules.stylix
+      ];
+    };
     nixosConfigurations.naron = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
