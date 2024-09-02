@@ -78,6 +78,20 @@
 
   };
 
+  services.xserver.displayManager = {
+    setupCommands = ''
+      LEFT='HDMI-A-1'
+      CENTER='DisplayPort-0'
+      RIGHT='HDMI-A-0'
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --mode '3840x2160' --dpi 120 --scale 1 --primary
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --rotate right --scale 1.25 --left-of $CENTER
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --scale 1.25 --right-of $CENTER
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --pos 0x0
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --pos 1350x0
+      ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 5190x0
+    '';
+  };
+  
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";

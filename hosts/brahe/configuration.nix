@@ -1,9 +1,9 @@
 { config, pkgs, inputs, ... }:
 
 {
-  networking.hostName = "arion";
+  networking.hostName = "brahe";
 
-  system.stateVersion = "23.11"; # Should not change after install
+  system.stateVersion = "24.05"; # Should not change after install
 
   # networking.wireless.enable = true;
 
@@ -78,14 +78,14 @@
 
   };
 
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    defaultSopsFormat = "yaml";
-    age.keyFile = "/home/usr/.config/sops/age/keys.txt";
-    secrets = {
-      "smb_credentials" = {};
-    };
-  };
+# sops = {
+#   defaultSopsFile = ../../secrets/secrets.yaml;
+#   defaultSopsFormat = "yaml";
+#   age.keyFile = "/home/usr/.config/sops/age/keys.txt";
+#   secrets = {
+#     "smb_credentials" = {};
+#   };
+# };
   
   # color schemes themes
   stylix = { 
@@ -95,21 +95,21 @@
     # imageScalingMode = "center"; # This currently only is supported by sway
   };
 
-  # NAS mount
-  fileSystems."/mnt/n" = {
-    device = "//192.168.1.2/steven";
-    fsType = "cifs";
-    options = [
-      "x-systemd.automount"
-      "noauto"
-      "x-systemd.idle-timeout=60"
-      "x-systemd.device-timeout=5s"
-      "x-systemd.mount-timeout=5s"
-      "cred=/run/secrets/smb_credentials"
-      "uid=${toString config.users.users.usr.uid}"
-      "gid=${toString config.users.groups.users.gid}"
-    ];
-  };
+# # NAS mount
+# fileSystems."/mnt/n" = {
+#   device = "//192.168.1.2/steven";
+#   fsType = "cifs";
+#   options = [
+#     "x-systemd.automount"
+#     "noauto"
+#     "x-systemd.idle-timeout=60"
+#     "x-systemd.device-timeout=5s"
+#     "x-systemd.mount-timeout=5s"
+#     "cred=/run/secrets/smb_credentials"
+#     "uid=${toString config.users.users.usr.uid}"
+#     "gid=${toString config.users.groups.users.gid}"
+#   ];
+# };
 
   # Bootloader
   boot.loader = {
@@ -118,15 +118,15 @@
     grub = {
       # To re-generate Windows grub entry, disable the extraEntries and enable useOSProber, 
       # then copy the windows menu entry from /boot/grub/grub.cfg into extraEntries.
-      useOSProber = false;
-      extraEntries = ''
-        menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-94DD-ADB6' {
-          insmod part_gpt
-          insmod fat
-          search --no-floppy --fs-uuid --set=root 94DD-ADB6
-          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        }
-        '';
+      useOSProber = true;
+#     extraEntries = ''
+#       menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-94DD-ADB6' {
+#         insmod part_gpt
+#         insmod fat
+#         search --no-floppy --fs-uuid --set=root 94DD-ADB6
+#         chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+#       }
+#       '';
       enable = true;
       efiSupport = true;
       device = "nodev";
