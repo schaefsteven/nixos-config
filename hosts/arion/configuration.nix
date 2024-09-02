@@ -63,6 +63,7 @@
       orca-slicer
       ungoogled-chromium
       zoom-us
+      gimp
   
       # desktop utilities
       gpick
