@@ -79,7 +79,7 @@
   };
 
   services.xserver = {
-    videoDrivers = [ "amdgpu" ];
+    videoDrivers = [ "intel" ];
     displayManager = {
       setupCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --mode '2256x1504' --dpi 120 --scale 1 --primary
