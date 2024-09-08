@@ -130,15 +130,15 @@
     grub = {
       # To re-generate Windows grub entry, disable the extraEntries and enable useOSProber, 
       # then copy the windows menu entry from /boot/grub/grub.cfg into extraEntries.
-      useOSProber = true;
-#     extraEntries = ''
-#       menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-94DD-ADB6' {
-#         insmod part_gpt
-#         insmod fat
-#         search --no-floppy --fs-uuid --set=root 94DD-ADB6
-#         chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-#       }
-#       '';
+      useOSProber = false;
+      extraEntries = ''
+        menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-AC63-F291' {
+          insmod part_gpt
+          insmod fat
+          search --no-floppy --fs-uuid --set=root AC63-F291
+          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        }
+        '';
       enable = true;
       efiSupport = true;
       device = "nodev";
