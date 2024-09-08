@@ -68,6 +68,9 @@
       gpick
       pavucontrol
       ventoy-full
+
+      #brahe-only
+      framework-tool
     ];
 
     home.file.".config/bashmount/config" = {
