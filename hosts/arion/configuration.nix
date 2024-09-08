@@ -34,8 +34,8 @@
     home.stateVersion = "24.05"; # Should not change after install
 
     imports = [
-      ../../modules/home-desktop.nix
       ../../modules/hm-main-user-core
+      ../../modules/rofi.nix
     ];
 
     home.packages = with pkgs; [
@@ -70,6 +70,7 @@
       gpick
       pavucontrol
       ventoy-full
+      flameshot
     ];
 
     home.file.".config/bashmount/config" = {
