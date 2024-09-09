@@ -1,0 +1,75 @@
+{
+	"name": "Vimium C",
+	"@time": "9/9/2024, 8:56:01 AM",
+	"time": 1725890161829,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "linux",
+		"firefox": 128
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.codewars.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://cad.onshape.com/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"map i passNextKey",
+		"map I enterInsertMode",
+		"map <c-d> scrollPageDown",
+		"map <c-u> scrollPageUp",
+		"map <c-h> Vomnibar.activateHistory",
+		"map <c-s-h> Vomnibar.activateHistoryInNewTab",
+		"map J nextTab",
+		"map K previousTab",
+		"map w moveTabToNextWindow",
+		"map W runKey keys=\"moveTabToNewWindow+duplicateTab#active=false+removeRightTab\"",
+		"# map W runKey keys=\"moveTabToNewWindow+createTab#reuse=\\\"new-bg\\\"+nextTab+removeTab\"",
+		"map e Vomnibar.activateEditUrl",
+		"map E Vomnibar.activateEditUrlInNewTab",
+		""
+	],
+	"newTabUrl": "https://yooper.cc",
+	"searchEngines": [
+		"nixo: https://search.nixos.org/options?channel=unstable&query=$s NixOS Options",
+		"",
+		"nixp: https://search.nixos.org/packages?channel=unstable&query=$s NixOS Packages",
+		"",
+		"hm: https://home-manager-options.extranix.com/?query=$s&release=master Home Manager Options",
+		"",
+		"google|Google: https://www.google.com/search?q=%s \\",
+		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
+		"  blank=https://www.google.com/ Google",
+		"",
+		"g.m|gm|g.map|gmap: https://www.google.com/maps?q=%s \\",
+		"  blank=https://www.google.com/maps Google Maps",
+		"",
+		"y|yt: https://www.youtube.com/results?search_query=%s \\",
+		"  blank=https://www.youtube.com/ YouTube",
+		"",
+		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
+		"",
+		"az|amazon: https://www.amazon.com/s?k=%s \\",
+		"  blank=https://www.amazon.com/ Amazon",
+		"",
+		"gh: https://github.com/search?q=$s \\",
+		"  blank=https://github.com/ GitHub Repo",
+		"",
+		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
+		"v.m|math: vimium://math\\ $S re= Calculate",
+		"v.p: vimium://parse\\ $S re= Redo Search",
+		""
+	],
+	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
+	"vimSync": true
+}
