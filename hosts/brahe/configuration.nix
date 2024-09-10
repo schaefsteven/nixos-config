@@ -90,14 +90,14 @@
     };
   };
 
-# sops = {
-#   defaultSopsFile = ../../secrets/secrets.yaml;
-#   defaultSopsFormat = "yaml";
-#   age.keyFile = "/home/usr/.config/sops/age/keys.txt";
-#   secrets = {
-#     "smb_credentials" = {};
-#   };
-# };
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/usr/.config/sops/age/keys.txt";
+    secrets = {
+      "smb_credentials" = {};
+    };
+  };
   
   # color schemes themes
   stylix = { 
@@ -107,21 +107,21 @@
     # imageScalingMode = "center"; # This currently only is supported by sway
   };
 
-# # NAS mount
-# fileSystems."/mnt/n" = {
-#   device = "//192.168.1.2/steven";
-#   fsType = "cifs";
-#   options = [
-#     "x-systemd.automount"
-#     "noauto"
-#     "x-systemd.idle-timeout=60"
-#     "x-systemd.device-timeout=5s"
-#     "x-systemd.mount-timeout=5s"
-#     "cred=/run/secrets/smb_credentials"
-#     "uid=${toString config.users.users.usr.uid}"
-#     "gid=${toString config.users.groups.users.gid}"
-#   ];
-# };
+  # NAS mount
+  fileSystems."/mnt/n" = {
+    device = "//192.168.1.2/steven";
+    fsType = "cifs";
+    options = [
+      "x-systemd.automount"
+      "noauto"
+      "x-systemd.idle-timeout=60"
+      "x-systemd.device-timeout=5s"
+      "x-systemd.mount-timeout=5s"
+      "cred=/run/secrets/smb_credentials"
+      "uid=${toString config.users.users.usr.uid}"
+      "gid=${toString config.users.groups.users.gid}"
+    ];
+  };
 
   # Bootloader
   boot.loader = {
