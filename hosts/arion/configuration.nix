@@ -3,6 +3,8 @@
 {
   networking.hostName = "arion";
 
+  services.openssh.enable = true;
+
   system.stateVersion = "23.11"; # Should not change after install
 
   # networking.wireless.enable = true;
