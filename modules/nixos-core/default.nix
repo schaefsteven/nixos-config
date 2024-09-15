@@ -4,6 +4,7 @@
   imports = [
     ./main-user-core.nix
     ./udisks2.nix
+    ./flatpak.nix
   ];
 
   # core system packages
