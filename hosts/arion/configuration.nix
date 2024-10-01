@@ -37,50 +37,9 @@
 
     imports = [
       ../../modules/hm-main-user-core
+      ../../modules/hm-main-user-workstation
       ../../modules/rofi.nix
     ];
-
-    home.packages = with pkgs; [
-      alacritty
-  
-      # terminal apps
-      bashmount
-      cowsay
-      dig
-      fastfetch
-      inxi
-      lolcat
-      pandoc
-      python3
-      python312Packages.pip
-      sops
-      texliveTeTeX
-      thefuck
-      tree
-      xclip
-  
-      # desktop apps
-      discord
-      google-chrome
-      obsidian
-      orca-slicer
-      ungoogled-chromium
-      zoom-us
-      gimp
-  
-      # desktop utilities
-      gpick
-      pavucontrol
-      ventoy-full
-      flameshot
-    ];
-
-    home.file.".config/bashmount/config" = {
-      text = ''
-        show_internal='0'
-      '';
-    };
-
   };
 
   services.xserver = {
