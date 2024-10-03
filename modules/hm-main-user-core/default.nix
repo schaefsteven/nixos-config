@@ -22,6 +22,7 @@
     python312Packages.pip
     sops
     thefuck
+    tldr
     tree
     unzip
     xclip
