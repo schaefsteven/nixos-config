@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    xdg-desktop-portal
+  ];
+
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ pkgs.xdg-desktop-portal ];
     config.common.default = [ "gtk" ];
   };
 
