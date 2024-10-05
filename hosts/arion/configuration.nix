@@ -42,6 +42,9 @@
     ];
   };
 
+  # mouse cursor pointer speed for vertical mouse
+  services.libinput.mouse.accelSpeed = "-1";
+
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
     displayManager = {
