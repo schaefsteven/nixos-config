@@ -29,6 +29,7 @@
       };
       "#window" = {
         padding = mkLiteral "0.3em";
+	border = mkLiteral "0.05em";
       };
     };
   };
