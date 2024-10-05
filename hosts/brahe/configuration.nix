@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   networking.hostName = "brahe";
@@ -41,6 +41,8 @@
     home.packages = with pkgs; [
       framework-tool
     ];
+
+    programs.alacritty.settings.font.size = lib.mkForce 8;
 
   };
 
