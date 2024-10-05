@@ -2,15 +2,15 @@
 
 {
   imports = [
+    ./alacritty.nix
+    ./bashmount.nix
     ./btop.nix
     ./firefox.nix
     ./git.nix
     ./zsh.nix
-    ./bashmount.nix
   ];
 
   home.packages = with pkgs; [
-    alacritty
 
     # terminal apps
     cowsay
