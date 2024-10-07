@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports = [
@@ -13,6 +13,12 @@
     base16-schemes # for use with stylix
     cifs-utils # for mounting NAS, etc
   ];
+
+  qt = {
+    enable = true;
+    style = "adwaita-dark";
+    platformTheme = "gtk2";
+  };
 
   # fonts
   fonts.packages = with pkgs; [

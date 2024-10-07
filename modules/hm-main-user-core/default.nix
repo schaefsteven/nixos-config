@@ -36,6 +36,7 @@
     ungoogled-chromium
 
     # desktop utilities
+    ksnip
     flameshot
     gpick
     pavucontrol
