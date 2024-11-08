@@ -61,7 +61,7 @@
 
   services.printing.enable = true;
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "US/Eastern";
 
   i18n.defaultLocale = "en_US.UTF-8";
 

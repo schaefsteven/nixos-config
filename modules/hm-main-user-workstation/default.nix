@@ -3,12 +3,13 @@
 {
   home.packages = with pkgs; [
     # terminal apps
-    ventoy-full
-    texliveTeTeX
     pandoc
+    texliveTeTeX
+    ventoy-full
 
     # desktop apps
-    zoom-us
+    blender
     orca-slicer
+    zoom-us
   ];
 }
