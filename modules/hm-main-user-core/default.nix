@@ -18,6 +18,7 @@
     fastfetch
     inxi
     lolcat
+    nmap
     python3
     python312Packages.pip
     sops
