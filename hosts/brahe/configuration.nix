@@ -46,6 +46,8 @@
 
   };
 
+  services.cloudflare-warp.enable = true;
+
   services.xserver = {
     videoDrivers = [ "intel" ];
     displayManager = {
