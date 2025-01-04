@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   networking.hostName = "brahe";
@@ -33,53 +33,20 @@
     home.stateVersion = "24.05"; # Should not change after install
 
     imports = [
-      ../../modules/home-desktop.nix
       ../../modules/hm-main-user-core
+      ../../modules/hm-main-user-workstation
+      ../../modules/rofi.nix
     ];
 
     home.packages = with pkgs; [
-      alacritty
-  
-      # terminal apps
-      bashmount
-      cowsay
-      dig
-      fastfetch
-      inxi
-      lolcat
-      pandoc
-      python3
-      python312Packages.pip
-      sops
-      texliveTeTeX
-      thefuck
-      tree
-      xclip
-  
-      # desktop apps
-      discord
-      google-chrome
-      obsidian
-      orca-slicer
-      ungoogled-chromium
-      zoom-us
-  
-      # desktop utilities
-      gpick
-      pavucontrol
-      ventoy-full
-
-      #brahe-only
       framework-tool
     ];
 
-    home.file.".config/bashmount/config" = {
-      text = ''
-        show_internal='0'
-      '';
-    };
+    programs.alacritty.settings.font.size = lib.mkForce 8;
 
   };
+
+  services.cloudflare-warp.enable = true;
 
   services.xserver = {
     videoDrivers = [ "intel" ];

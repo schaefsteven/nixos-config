@@ -11,6 +11,7 @@
       nixgit = "git -C ~/.nix";
       nrs = "sudo nixos-rebuild switch --flake ~/.nix";
       py = "python3";
+      tree = "tree --filesfirst";
       tuxsay = "cowsay -f tux";
       xclip = "xclip -selection clipboard";
     };

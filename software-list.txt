@@ -1,14 +1,12 @@
 blender
 cuemix
-gimp
 hugo
 libreoffice
 media player
 minecraft
 npm
 obs
-qdirstat
 ranger
-spotify
 ssh
 vm support
+ksnip
