@@ -5,19 +5,20 @@
 
   system.stateVersion = "24.05"; # Should not change after install
 
-  # networking.wireless.enable = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-
-  # home-manager.users = { "usr" = import ./home.nix; };
 
   imports =
     [ ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
       ../../modules/nixos-core
+      ../../modules/i3.nix
     ];
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.plasma-bigscreen
+  ];
 
   home-manager.sharedModules = [ {
       home.packages = with pkgs; [
@@ -68,14 +69,6 @@
       '';
     };
 
-  };
-
-  services.xserver.enable = true;
-
-  services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5 = { 
-    enable = true;
-    bigscreen.enable = true;
   };
 
   services.openssh.enable = true;
