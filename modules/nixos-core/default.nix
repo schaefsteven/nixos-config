@@ -9,9 +9,15 @@
 
   # core system packages
   environment.systemPackages = with pkgs; [
-    nerdfonts
     base16-schemes # for use with stylix
     cifs-utils # for mounting NAS, etc
+    nerdfonts
+    usbutils # lsusb
+
+    # tools for identifying keycodes and keysyms
+    evtest
+    xorg.xev
+
   ];
 
   qt = {
