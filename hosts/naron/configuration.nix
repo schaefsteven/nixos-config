@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   networking.hostName = "naron";
@@ -16,8 +16,15 @@
       ../../modules/i3.nix
     ];
 
+  services.xserver.windowManager.i3.configFile = lib.mkForce ../../configs/i3/htpc;
+  # evdev:input:b0003v1915p1028* # i25 Rii mini
+  # KEYBOARD_KEY_10082=f24 # power key
+  services.udev.extraHwdb = ''
+evdev:input:b0003v1915p1028*
+ KEYBOARD_KEY_10082=f24
+  '';
+
   environment.systemPackages = with pkgs; [
-    libsForQt5.plasma-bigscreen
     (pkgs.callPackage ../../derivations/big-launcher/big-launcher.nix {})
   ];
 

@@ -6,7 +6,7 @@
     enable = true;
     deviceSection = ''Option "TearFree" "true"'';
 
-    # Keyboard layout and mapping
+    # Keyboard layout and mapping (Xmodmap replacement)
     xkb = {
       options = builtins.concatStringsSep "," [
         "ctrl:nocaps" # use Capslock as Ctrl
