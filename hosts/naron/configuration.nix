@@ -18,6 +18,7 @@
 
   environment.systemPackages = with pkgs; [
     libsForQt5.plasma-bigscreen
+    (pkgs.callPackage ../../derivations/big-launcher/big-launcher.nix {})
   ];
 
   home-manager.sharedModules = [ {
@@ -32,7 +33,6 @@
     home.stateVersion = "24.05"; # Should not change after install
 
     imports = [
-      ../../modules/home-desktop.nix
       ../../modules/hm-main-user-core
     ];
 

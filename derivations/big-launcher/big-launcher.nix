@@ -33,15 +33,15 @@ stdenv.mkDerivation {
       name = "main-repo";
       owner = "complexlogic";
       repo = "big-launcher";
-      rev = "master";
-      sha256 = "sha256-RbZ1VBdduFUVil6+Kv6ddVPY8Pa2amIvYLbnGtSLDYQ=";
+      rev = "f8935c068b40c94610f3707c288675b2184558cb";
+      sha256 = "sha256-T8kBHgSsBGmBR6Ro2No3P/PLQhzUogTz+b1b6eS7yjg=";
     })
 
-    (fetchzip {
-      name = "assets";
-      url = "https://github.com/complexlogic/big-launcher/files/10326572/assets.zip";
-      hash = "sha256-qYPvXTkhWKmZOuwrsQNIQbA7zOiqS4gdVsSnsXVdO6Y=";
-    })
+#    (fetchzip {
+#      name = "assets";
+#      url = "https://github.com/complexlogic/big-launcher/files/10326572/assets.zip";
+#      hash = "sha256-qYPvXTkhWKmZOuwrsQNIQbA7zOiqS4gdVsSnsXVdO6Y=";
+#    })
   ];
 
   sourceRoot = "main-repo";
@@ -78,11 +78,13 @@ stdenv.mkDerivation {
 
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/build
-    cp launcher config.ini lconfig.h $out/build
-    ln -s /home/usr/layout.xml $out/build/layout.xml
-    ls -al
-    cp -r ../../assets/ $out/build/
+    mkdir -p $out/bin
+    cp big-launcher $out/bin
+    ln -s /home/usr/.big-launcher/layout.xml $out/bin/layout.xml
+    ln -s /home/usr/.big-launcher/config.ini $out/bin/config.ini
+    ln -s /home/usr/.big-launcher/lconfig.h $out/bin/lconfig.h
+    ln -s /home/usr/.big-launcher/assets $out/bin/assets
+    # cp -r ../../assets/ $out/bin/
     runHook postInstall
   '';
 
