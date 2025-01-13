@@ -14,6 +14,7 @@
     nerdfonts
     usbutils # lsusb
     pulseaudio
+    xdotool
 
     # tools for identifying keycodes and keysyms
     evtest
