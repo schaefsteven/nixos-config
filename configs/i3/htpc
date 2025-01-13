@@ -16,6 +16,9 @@ bindcode $hamburger workspace next
 bindcode $home workspace "launcher"
 bindcode $power kill
 
+# start launcher
+bindsym $mod+Escape workspace "launcher"; exec --no-startup-id sh -c 'cd ~/.big-launcher && big-launcher'
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

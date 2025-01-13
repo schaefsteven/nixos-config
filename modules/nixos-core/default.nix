@@ -13,6 +13,7 @@
     cifs-utils # for mounting NAS, etc
     nerdfonts
     usbutils # lsusb
+    pulseaudio
 
     # tools for identifying keycodes and keysyms
     evtest

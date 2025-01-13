@@ -16,7 +16,13 @@
       ../../modules/i3.nix
     ];
 
-  services.xserver.windowManager.i3.configFile = lib.mkForce ../../configs/i3/htpc;
+  # i3 config
+  services.xserver.windowManager.i3.configFile = lib.mkForce null;
+
+  # unified remote server
+  services.urserver.enable = true;
+
+  # disable power putton on remote
   # evdev:input:b0003v1915p1028* # i25 Rii mini
   # KEYBOARD_KEY_10082=f24 # power key
   services.udev.extraHwdb = ''
@@ -41,6 +47,7 @@ evdev:input:b0003v1915p1028*
 
     imports = [
       ../../modules/hm-main-user-core
+      ../../modules/rofi.nix
     ];
 
     home.packages = with pkgs; [
@@ -105,5 +112,13 @@ evdev:input:b0003v1915p1028*
     # jack.enable = true;
     # wireplumber.enable = true;
   };
+
+  # color schemes themes
+  stylix = { 
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    image = ../../assets/black.jpg;
+  };
+
 
 }
