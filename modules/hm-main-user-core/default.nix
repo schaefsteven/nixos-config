@@ -6,6 +6,7 @@
     ./bashmount.nix
     ./btop.nix
     ./firefox.nix
+    ./gh-cli.nix
     ./git.nix
     ./zsh.nix
   ];
