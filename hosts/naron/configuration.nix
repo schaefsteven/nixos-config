@@ -23,7 +23,6 @@
 
   services.xserver = {
     windowManager.i3.configFile = lib.mkForce null;
-    videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
     displayManager = {
       setupCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output "HDMI-2" --mode "1920x1080"
@@ -98,7 +97,10 @@ evdev:input:b0003v1915p1028*
       '';
     };
 
-    services.picom.enable = true;
+    services.picom = {
+      enable = true;
+      vSync = true;
+    };
 
     services.dunst = {
       enable = true;
