@@ -49,6 +49,7 @@ evdev:input:b0003v1915p1028*
       home.packages = with pkgs; [
         qdirstat
         neovim
+	playerctl
       ];
       stylix.targets = {
         dunst.enable = false;
@@ -96,6 +97,8 @@ evdev:input:b0003v1915p1028*
         show_internal='0'
       '';
     };
+
+    services.playerctld.enable = true;
 
     services.picom = {
       enable = true;
