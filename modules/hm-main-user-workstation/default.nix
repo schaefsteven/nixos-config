@@ -9,6 +9,7 @@
 
     # desktop apps
     blender
+    libreoffice
     orca-slicer
     zoom-us
   ];
