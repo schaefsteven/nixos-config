@@ -13,4 +13,5 @@
     orca-slicer
     zoom-us
   ];
+  services.dunst.enable = true;
 }

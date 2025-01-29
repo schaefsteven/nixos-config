@@ -16,8 +16,19 @@
       ../../modules/i3.nix
     ];
 
-  # i3 config
-  services.xserver.windowManager.i3.configFile = lib.mkForce null;
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "usr";
+  };
+
+  services.xserver = {
+    windowManager.i3.configFile = lib.mkForce null;
+    displayManager = {
+      setupCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr --output "HDMI-2" --mode "1920x1080"
+      '';
+    };
+  };
 
   # unified remote server
   services.urserver.enable = true;
@@ -38,7 +49,11 @@ evdev:input:b0003v1915p1028*
       home.packages = with pkgs; [
         qdirstat
         neovim
+	playerctl
       ];
+      stylix.targets = {
+        dunst.enable = false;
+      };
     }
   ];
 
@@ -81,6 +96,32 @@ evdev:input:b0003v1915p1028*
       text = ''
         show_internal='0'
       '';
+    };
+
+    services.playerctld.enable = true;
+
+    services.picom = {
+      enable = true;
+      vSync = true;
+    };
+
+    services.dunst = {
+      enable = true;
+      settings = {
+        global = {
+	  width = 999999;
+	  offset = "0x0";
+	  progress_bar_frame_width = 0;
+	  progress_bar_min_width = 1920;
+	  progress_bar_max_width = 1920;
+	  progress_bar_height = 30;
+	  #transparency = 15;
+	  frame_width = 0;
+	  format = "%s %p";
+	  highlight = "#FFFFFF99";
+	  background = "#00000000";
+        };
+      };
     };
 
   };
