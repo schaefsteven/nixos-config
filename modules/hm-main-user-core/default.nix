@@ -22,6 +22,7 @@
     nmap
     python3
     python312Packages.pip
+    ranger
     sops
     thefuck
     tldr

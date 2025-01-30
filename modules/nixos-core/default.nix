@@ -11,7 +11,6 @@
   environment.systemPackages = with pkgs; [
     base16-schemes # for use with stylix
     cifs-utils # for mounting NAS, etc
-    nerdfonts
     usbutils # lsusb
     pulseaudio
     xdotool
@@ -29,9 +28,7 @@
   };
 
   # fonts
-  fonts.packages = with pkgs; [
-    nerdfonts
-  ];
+  fonts.packages = [ ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # core environment variables
   environment.variables = {
