@@ -45,7 +45,7 @@ evdev:input:b0003v1915p1028*
     (pkgs.callPackage ../../derivations/big-launcher/big-launcher.nix {})
   ];
 
-  environment.sessionVariables = {
+  environment.variables = {
     HASS_SERVER = "http://192.168.1.2:20810";
   };
 
@@ -141,7 +141,10 @@ evdev:input:b0003v1915p1028*
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/usr/.config/sops/age/keys.txt";
     secrets = {
-      "hass_token" = {};
+      "hass_token" = {
+        owner = config.users.users.usr.name;
+        group = config.users.users.usr.group;
+      };
     };
   };
   
