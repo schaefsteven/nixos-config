@@ -49,7 +49,7 @@ evdev:input:b0003v1915p1028*
     HASS_SERVER = "http://192.168.1.2:20810";
   };
 
-  programs.bash.snellInit = ''
+  programs.bash.shellInit = ''
     export HASS_TOKEN="$(cat ${config.sops.secrets.hass_token.path})"
   '';
 
