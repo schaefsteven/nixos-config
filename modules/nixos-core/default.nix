@@ -14,6 +14,7 @@
     usbutils # lsusb
     pulseaudio
     xdotool
+    xorg.xmodmap # I just can't quit you
 
     # tools for identifying keycodes and keysyms
     evtest

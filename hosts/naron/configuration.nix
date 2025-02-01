@@ -30,6 +30,13 @@
     };
   };
 
+  # xmodmap
+  services.xserver.displayManager.sessionCommands = ''
+    ${pkgs.xorg.xmodmap}/bin/xmodmap "${pkgs.writeText  "xkb-layout" ''
+        keycode 135 = ISO_Level5_Shift
+    ''}"
+  '';
+
   # unified remote server
   services.urserver.enable = true;
 
