@@ -45,11 +45,20 @@ evdev:input:b0003v1915p1028*
     (pkgs.callPackage ../../derivations/big-launcher/big-launcher.nix {})
   ];
 
+  environment.sessionVariables = {
+    HASS_SERVER = "http://192.168.1.2:20810";
+  };
+
+  programs.bash.snellInit = ''
+    export HASS_TOKEN="$(cat ${config.sops.secrets.hass_token.path})"
+  '';
+
   home-manager.sharedModules = [ {
       home.packages = with pkgs; [
-        qdirstat
-        neovim
+	home-assistant-cli
 	playerctl
+        neovim
+        qdirstat
       ];
       stylix.targets = {
         dunst.enable = false;
@@ -111,11 +120,10 @@ evdev:input:b0003v1915p1028*
         global = {
 	  width = 999999;
 	  offset = "0x0";
-	  progress_bar_frame_width = 0;
+	  progress_bar_frame_width = 1;
 	  progress_bar_min_width = 1920;
 	  progress_bar_max_width = 1920;
 	  progress_bar_height = 30;
-	  #transparency = 15;
 	  frame_width = 0;
 	  format = "%s %p";
 	  highlight = "#FFFFFF99";
@@ -133,7 +141,7 @@ evdev:input:b0003v1915p1028*
     defaultSopsFormat = "yaml";
     age.keyFile = "/home/usr/.config/sops/age/keys.txt";
     secrets = {
-      "smb_credentials" = {};
+      "hass_token" = {};
     };
   };
   
