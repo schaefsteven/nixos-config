@@ -35,6 +35,7 @@
     gimp
     google-chrome
     obsidian
+    reaper
     spotify
     ungoogled-chromium
 
