@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "9/9/2024, 8:56:01 AM",
-	"time": 1725890161829,
+	"@time": "4/2/2025, 3:59:19 PM",
+	"time": 1743623959722,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 128
+		"firefox": 134
 	},
 	"exclusionRules": [
 		{
@@ -19,6 +19,10 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://cad.onshape.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.affine.pro/"
 		}
 	],
 	"keyLayout": 2,
@@ -47,7 +51,7 @@
 		"",
 		"hm: https://home-manager-options.extranix.com/?query=$s&release=master Home Manager Options",
 		"",
-		"google|Google: https://www.google.com/search?q=%s \\",
+		"g|google|Google: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
 		"  blank=https://www.google.com/ Google",
 		"",
@@ -63,7 +67,7 @@
 		"  blank=https://www.amazon.com/ Amazon",
 		"",
 		"gh: https://github.com/search?q=$s \\",
-		"  blank=https://github.com/ GitHub Repo",
+		"  blank=https://github.com/schaefsteven?tab=repositories GitHub Repo",
 		"",
 		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
 		"v.m|math: vimium://math\\ $S re= Calculate",
