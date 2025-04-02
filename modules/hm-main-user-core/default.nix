@@ -44,5 +44,8 @@
     flameshot
     gpick
     pavucontrol
+
+    # other
+    electron
   ];
 }

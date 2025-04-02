@@ -28,7 +28,7 @@
       home.packages = with pkgs; [
         qdirstat
         neovim
-	nitrogen
+        nitrogen
       ];
     }
   ];
@@ -41,6 +41,7 @@
       ../../modules/hm-main-user-workstation
       ../../modules/hm-main-user-dev
       ../../modules/rofi.nix
+      ./cuemix-desktop-entry.nix
     ];
   };
 
