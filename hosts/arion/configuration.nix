@@ -99,6 +99,9 @@
     ];
   };
 
+  # game drive
+  boot.supportedFilesystems = ["ntfs"];
+
   # Bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
