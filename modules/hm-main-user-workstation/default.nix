@@ -8,7 +8,7 @@
     ventoy-full
 
     # desktop apps
-    blender
+    blender-hip
     libreoffice
     orca-slicer
     zoom-us
