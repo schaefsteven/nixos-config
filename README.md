@@ -7,3 +7,11 @@
 - Can set ui.prefersReducedMotion, but using 1 makes it true instead of 1 which does not work
 - Might be able to include userChrome.css, but not trying for now.
 - SearchEngines.Default is only supported in ESR for some reason? 
+
+
+# Todo:
+hugo
+media player
+minecraft
+obs
+vm support
