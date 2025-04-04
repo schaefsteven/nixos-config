@@ -8,6 +8,7 @@
     ./firefox.nix
     ./gh-cli.nix
     ./git.nix
+    ./tmux.nix
     ./zsh.nix
   ];
 
