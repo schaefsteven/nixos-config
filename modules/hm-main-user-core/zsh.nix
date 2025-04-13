@@ -10,6 +10,7 @@
       nivm = "nvim";
       nixgit = "git -C ~/.nix";
       nrs = "sudo nixos-rebuild switch --flake ~/.nix";
+      please = "sudo";
       py = "python3";
       tree = "tree --filesfirst";
       tuxsay = "cowsay -f tux";
