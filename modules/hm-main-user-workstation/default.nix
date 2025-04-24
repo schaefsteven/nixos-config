@@ -10,6 +10,7 @@
     # desktop apps
     blender-hip
     libreoffice
+    obs-studio
     orca-slicer
     zoom-us
   ];
