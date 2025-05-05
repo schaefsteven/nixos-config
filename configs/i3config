@@ -8,7 +8,8 @@ set $right l
 
 # Home Assistant
 # Office Lamp
-bindsym $mod+Control+l exec --no-startup-id curl --data '' http://192.168.1.2:20810/api/webhook/-f9oX9IgzGhAskeNItpIuTfUG
+bindsym $mod+Control+l exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-f9oX9IgzGhAskeNItpIuTfUG
+bindsym $mod+Control+p exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-sRERxltBj74R-hIwjTMgouq5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
