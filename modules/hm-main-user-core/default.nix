@@ -33,7 +33,7 @@
 
     # desktop apps
     discord
-    gimp3
+    gimp
     google-chrome
     obsidian
     reaper
