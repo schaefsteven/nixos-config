@@ -134,7 +134,7 @@ evdev:input:b0003v1915p1028*
 	  frame_width = 0;
 	  format = "%s %p";
 	  highlight = "#FFFFFF99";
-	  background = "#00000000";
+	  background = "#00000010";
         };
       };
     };
