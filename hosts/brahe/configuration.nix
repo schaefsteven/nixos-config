@@ -25,6 +25,7 @@
       home.packages = with pkgs; [
         qdirstat
         neovim
+	brightnessctl # screen backlight brightness control
       ];
     }
   ];
