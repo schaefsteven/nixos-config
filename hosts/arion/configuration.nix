@@ -66,6 +66,9 @@
     };
   };
   
+  # unified remote server
+  services.urserver.enable = true;
+
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
