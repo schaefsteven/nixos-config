@@ -19,7 +19,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "gozilla";
-      plugins = ["git" "thefuck"];
+      plugins = ["git"];
     };
     initExtra = ''
       fastfetch

@@ -5,7 +5,7 @@
     # terminal apps
     pandoc
     texliveTeTeX
-    ventoy-full
+    # ventoy-full # designated insecure because of binary blobs
 
     # desktop apps
     blender-hip

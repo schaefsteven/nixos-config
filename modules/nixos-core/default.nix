@@ -34,11 +34,11 @@
   '';
   security.polkit.enable = true;
 
-  qt = {
-    enable = true;
-    style = "adwaita-dark";
-    platformTheme = "gtk2";
-  };
+  # qt = {
+    # enable = true;
+    # style = "adwaita-dark";
+    # platformTheme = "gtk2";
+  # };
 
   # fonts
   fonts.packages = [ ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);

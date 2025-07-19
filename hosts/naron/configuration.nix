@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, self, ... }:
 
 {
   networking.hostName = "naron";
@@ -49,7 +49,7 @@ evdev:input:b0003v1915p1028*
   '';
 
   environment.systemPackages = with pkgs; [
-    (pkgs.callPackage ../../derivations/big-launcher/big-launcher.nix {})
+    self.packages.${pkgs.system}.big-launcher
   ];
 
   environment.variables = {
@@ -96,7 +96,6 @@ evdev:input:b0003v1915p1028*
       python312Packages.pip
       sops
       texliveTeTeX
-      thefuck
       tree
       xclip
   

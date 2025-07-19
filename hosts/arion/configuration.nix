@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, self, ... }:
 
 {
   networking.hostName = "arion";
@@ -44,6 +44,12 @@
       ./cuemix-desktop-entry.nix
     ];
   };
+
+  # big-launcher (for testing)
+  environment.systemPackages = with pkgs; [
+    self.packages.${pkgs.system}.big-launcher
+  ];
+
 
   # mouse cursor pointer speed for vertical mouse
   services.libinput.mouse.accelSpeed = "-1";
