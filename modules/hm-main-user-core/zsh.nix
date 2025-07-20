@@ -18,14 +18,30 @@
     };
     oh-my-zsh = {
       enable = true;
-      theme = "gozilla";
-      plugins = ["git"];
+      # theme = "gozilla";
+      # plugins = ["git-prompt"];
     };
     initContent = ''
       fastfetch
       echo
       spaces="                                               "
       date +"''${spaces}%A, %B %d : %Y/%m/%d"
+
+      # prompt
+
+      autoload -Uz vcs_info
+      zstyle ':vcs_info:*' enable git
+      zstyle ':vcs_info:git*' formats "(%b)"
+      precmd() {
+        vcs_info
+      }
+
+      setopt prompt_subst
+
+      # set var uath if we're on an ssh connection
+      [[ $SSH_CONNECTION ]] && local uath='%F{red}%n@%M%f'
+
+      PROMPT=''\'''${uath} %F{blue}%B%1~%b%f ''${vcs_info_msg_0_} %F{green}%B➜%b%f '
       '';
   };
   programs.zoxide = {
