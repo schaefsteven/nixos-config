@@ -21,11 +21,17 @@
       theme = "gozilla";
       plugins = ["git"];
     };
-    initExtra = ''
+    initContent = ''
       fastfetch
       echo
       spaces="                                               "
       date +"''${spaces}%A, %B %d : %Y/%m/%d"
       '';
   };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = ["--cmd cd"];
+  };
 }
+
