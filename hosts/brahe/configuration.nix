@@ -3,6 +3,8 @@
 {
   networking.hostName = "brahe";
 
+  # services.timesyncd.enable = false;
+
   system.stateVersion = "24.05"; # Should not change after install
 
   # networking.wireless.enable = true;
