@@ -1,1 +1,0 @@
-bindsym $mod+Control+y exec --no-startup-id rofi -show combi -modi "calc#combi" -calc-command "echo -n '{result}' | xclip -selection clipboard" -automatic-save-to-history

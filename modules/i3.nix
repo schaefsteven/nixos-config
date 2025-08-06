@@ -3,7 +3,7 @@
 let
   i3ConfigFiles = [
     ../configs/i3config
-    ../configs/prepend
+    ../configs/i3-brahe
   ];
 in {
   # i3
