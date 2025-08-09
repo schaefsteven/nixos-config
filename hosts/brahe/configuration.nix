@@ -38,6 +38,7 @@
 
     imports = [
       ../../modules/hm-main-user-core
+      ../../modules/hm-main-user-dev
       ../../modules/hm-main-user-workstation
       ../../modules/rofi.nix
     ];
