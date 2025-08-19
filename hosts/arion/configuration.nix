@@ -3,6 +3,10 @@
 {
   networking.hostName = "arion";
 
+  networking.firewall.allowedTCPPorts = [ 
+    8668 # Verge3D
+  ];
+
   services.openssh.enable = true;
 
   system.stateVersion = "23.11"; # Should not change after install
