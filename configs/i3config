@@ -11,6 +11,9 @@ set $right l
 bindsym $mod+Control+l exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-f9oX9IgzGhAskeNItpIuTfUG
 bindsym $mod+Control+p exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-sRERxltBj74R-hIwjTMgouq5
 
+# Screenshot
+bindsym Print exec --no-startup-id ksnip -r
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
