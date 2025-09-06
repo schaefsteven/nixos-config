@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "4/2/2025, 3:59:19 PM",
-	"time": 1743623959722,
+	"@time": "9/5/2025, 11:11:42 PM",
+	"time": 1757128302549,
 	"environment": {
-		"extension": "1.99.997",
+		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 134
+		"firefox": 140
 	},
 	"exclusionRules": [
 		{
@@ -23,6 +23,18 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://app.affine.pro/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.speedcoder.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://monkeytype.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://keyboardchecker.com/"
 		}
 	],
 	"keyLayout": 2,
@@ -68,6 +80,8 @@
 		"",
 		"gh: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/schaefsteven?tab=repositories GitHub Repo",
+		"",
+		"ssgh: https://github.com/search?q=$s+owner:schaefsteven&type=repositories",
 		"",
 		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
 		"v.m|math: vimium://math\\ $S re= Calculate",
