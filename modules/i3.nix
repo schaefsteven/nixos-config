@@ -21,18 +21,14 @@
     # I tried to make this work so that custom rules get applied to everything 
     # but my QMK keyboard, but alas, no worky. leaving this here in case I come 
     # back and try to fix it later for reference. 
-    # inputClassSections = [
-      # ''
-        # Identifier "General Keyboards" 
-        # MatchIsKeyboard "on"
-        # Option "XkbOptions" "ctrl:nocaps,shift:both_capslock,altwin:swap_alt_win"
-      # ''
-      # ''
-        # Identifier "Bastard Keyboards"
-        # MatchVendor "Bastard"
-        # Option "XkbOptions" ""
-      # ''
-    # ];
+    inputClassSections = [
+      ''
+        Identifier "General Keyboards" 
+        MatchIsKeyboard "on"
+        MatchVendor "Dell|dell|Logitech|logitech"
+        Option "XkbOptions" "ctrl:nocaps,shift:both_capslock,altwin:swap_alt_win"
+      ''
+    ];
 
     desktopManager = {
       xterm.enable = false;
