@@ -19,6 +19,7 @@
     dig
     fastfetch
     inxi
+    jq
     lolcat
     nmap
     python3
