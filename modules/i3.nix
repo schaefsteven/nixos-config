@@ -28,6 +28,12 @@
         MatchVendor "Dell|dell|Logitech|logitech"
         Option "XkbOptions" "ctrl:nocaps,shift:both_capslock,altwin:swap_alt_win"
       ''
+      ''
+        Identifier "Framework Laptop Keyboard" 
+        MatchIsKeyboard "on"
+        MatchProduct "AT Translated Set 2 keyboard"
+        Option "XkbOptions" "ctrl:nocaps,shift:both_capslock,altwin:swap_alt_win"
+      ''
     ];
 
     desktopManager = {
