@@ -38,6 +38,7 @@
     reaper
     spotify
     ungoogled-chromium
+    xfce.thunar
 
     # desktop utilities
     ksnip
