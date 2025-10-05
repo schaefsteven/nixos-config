@@ -307,7 +307,7 @@ bindsym $mod+Return exec --no-startup-id rofi -show combi -modi "calc#combi" -ca
 bindsym $mod+$alt+p exec --no-startup-id rofi -show power -modi "power:rofi-power-menu --choices=shutdown/reboot/suspend/logout"
 
 # Focus the main workspace
-exec --no-startup-id i3-msg 'workspace Main'
+exec --no-startup-id i3-msg 'workspace 1: Main'
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
