@@ -24,8 +24,8 @@
       inputs.sops-nix.nixosModules.sops
       ../../modules/nixos-core
       ../../modules/nixos-gaming
-      ../../modules/i3.nix
       ../../modules/teamviewer.nix
+      ./i3.nix
     ];
 
   home-manager.sharedModules = [ {
@@ -75,7 +75,7 @@
       '';
     };
   };
-  
+
   # unified remote server
   services.urserver.enable = true;
 

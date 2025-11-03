@@ -48,7 +48,7 @@ in {
     windowManager.i3 = {
       enable = true;
       # configFile = ../configs/i3config;
-      configFile = pkgs.writeText "i3config" (lib.concatStringsSep "\n" (map (f: builtins.readFile f) i3ConfigFiles));
+      # configFile = pkgs.writeText "i3config" (lib.concatStringsSep "\n" (map (f: builtins.readFile f) i3ConfigFiles));
       extraPackages = with pkgs; [
         dmenu #application launcher most people use
         i3status # gives you the default i3 status bar

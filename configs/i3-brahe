@@ -1,3 +1,4 @@
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d intel_backlight s 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d intel_backlight s 5%-
 
+bindsym $mod+Control+j exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-sRERxltBj74R-hIwjTMgouq5
