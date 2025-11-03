@@ -12,6 +12,7 @@
     libreoffice
     obs-studio
     orca-slicer
+    vlc
     zoom-us
   ];
   services.dunst.enable = true;

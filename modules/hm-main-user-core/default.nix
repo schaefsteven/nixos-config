@@ -19,6 +19,7 @@
     dig
     fastfetch
     inxi
+    jq
     lolcat
     nmap
     python3
@@ -38,6 +39,7 @@
     reaper
     spotify
     ungoogled-chromium
+    xfce.thunar
 
     # desktop utilities
     ksnip

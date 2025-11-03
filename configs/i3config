@@ -11,6 +11,9 @@ set $right l
 bindsym $mod+Control+l exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-f9oX9IgzGhAskeNItpIuTfUG
 bindsym $mod+Control+p exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-sRERxltBj74R-hIwjTMgouq5
 
+# Screenshot
+bindsym Print exec --no-startup-id ksnip -r
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -78,22 +81,23 @@ bindsym $mod+minus scratchpad show
 
 # workspaces
 
-set $wsq "Q"
-set $wsw "W" 
-set $wse "E" 
-set $wsr "R" 
-set $wst "T"
-set $wsy "Y"
-set $wsu "U"
-set $wsi "I"
-set $wso "O"
-set $wsp "P"
-set $wsa "A"
-set $wss "S"
-set $wsd "D"
-set $wsf "F"
-set $wsg "G"
-set $wsz "Z"
+set $wsq "1: Q"
+set $wsw "2: W" 
+set $wse "3: E" 
+set $wsr "4: R" 
+set $wst "5: T"
+set $wsy "1: Y"
+set $wsu "2: U"
+set $wsi "3: I"
+set $wso "4: O"
+set $wsp "5: P"
+set $wsMain "1: Main"
+set $wsa "2: A"
+set $wss "3: S"
+set $wsd "4: D"
+set $wsf "5: F"
+set $wsg "6: G"
+set $wsz "1: Z"
 set $wsx "X"
 set $wsc "C"
 set $wsv "V"
@@ -103,7 +107,6 @@ set $wsm "M"
 set $wsComma "Comma"
 set $wsPeriod "Period"
 set $wsSlash "Slash"
-set $wsMain "Main"
 
 bindsym $mod+q workspace $wsq
 bindsym $mod+w workspace $wsw
@@ -304,7 +307,7 @@ bindsym $mod+Return exec --no-startup-id rofi -show combi -modi "calc#combi" -ca
 bindsym $mod+$alt+p exec --no-startup-id rofi -show power -modi "power:rofi-power-menu --choices=shutdown/reboot/suspend/logout"
 
 # Focus the main workspace
-exec --no-startup-id i3-msg 'workspace Main'
+exec --no-startup-id i3-msg 'workspace 1: Main'
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -331,3 +334,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# zoom notif rules
+
+for_window [class="zoom" title="zoom"] floating enable

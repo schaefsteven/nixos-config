@@ -3,6 +3,10 @@
 {
   networking.hostName = "arion";
 
+  networking.firewall.allowedTCPPorts = [ 
+    8668 # Verge3D
+  ];
+
   services.openssh.enable = true;
 
   system.stateVersion = "23.11"; # Should not change after install
@@ -125,6 +129,14 @@
 
   # game drive
   boot.supportedFilesystems = ["ntfs"];
+  fileSystems."/mnt/g" = {
+    device = "/dev/disk/by-uuid/6692F0CE92F0A3A9";
+    fsType = "ntfs";
+    options = [
+      "uid=${toString config.users.users.usr.uid}"
+      "gid=${toString config.users.groups.users.gid}"
+    ];
+  };
 
   # Bootloader
   boot.loader = {
