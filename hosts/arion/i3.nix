@@ -8,6 +8,7 @@ let
     ../../configs/i3/default-appearance
     ../../configs/i3/applications
     ./i3-host-config
+    ../../configs/i3/startup
   ];
 in {
 
