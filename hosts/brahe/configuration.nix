@@ -19,8 +19,8 @@
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
       ../../modules/nixos-core
-      ../../modules/i3.nix
       ../../modules/teamviewer.nix
+      ./i3.nix
     ];
 
   home-manager.sharedModules = [ {

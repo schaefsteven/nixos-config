@@ -1,0 +1,44 @@
+# assign workspaces to monitors
+# vars for monitors
+set $monLeft HDMI-A-1
+set $monCenter DisplayPort-0
+set $monRight HDMI-A-0
+
+workspace $wsq output $monLeft
+workspace $wsw output $monLeft
+workspace $wse output $monLeft
+workspace $wsr output $monLeft
+workspace $wst output $monLeft
+workspace $wsy output $monRight
+workspace $wsu output $monRight
+workspace $wsi output $monRight
+workspace $wso output $monRight
+workspace $wsp output $monRight
+workspace $wsa output $monCenter
+workspace $wss output $monCenter
+workspace $wsd output $monCenter
+workspace $wsf output $monCenter
+workspace $wsg output $monCenter
+# workspace $wsz output 
+# workspace $wsx output 
+# workspace $wsc output 
+# workspace $wsv output 
+# workspace $wsb output 
+# workspace $wsn output 
+# workspace $wsm output 
+# workspace $wsComma output 
+# workspace $wsPeriod output 
+# workspace $wsSlash output 
+workspace $wsMain output $monCenter
+
+# move workspaces between monitors
+bindsym $mod+Control+space move workspace to output $monCenter
+bindsym $mod+Control+q move workspace to output $monLeft
+bindsym $mod+Control+y move workspace to output $monRight
+
+# startup
+# focus the main workspace
+exec --no-startup-id i3-msg 'workspace 1: Main'
+
+# nitrogen restore
+exec --no-startup-id nitrogen --restore

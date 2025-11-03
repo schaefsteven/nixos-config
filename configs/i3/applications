@@ -1,0 +1,16 @@
+# Home Assistant
+# Office Lights
+bindsym $mod+Control+l exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-f9oX9IgzGhAskeNItpIuTfUG
+bindsym $mod+Control+p exec --no-startup-id curl --data '' http://192.168.1.9:8123/api/webhook/-sRERxltBj74R-hIwjTMgouq5
+
+# Screenshot
+bindsym Print exec --no-startup-id ksnip -r
+
+# start a terminal
+bindsym $mod+semicolon exec --no-startup-id alacritty
+
+# rofi
+# main
+bindsym $mod+Return exec --no-startup-id rofi -show combi -modi "calc#combi" -calc-command "echo -n '{result}' | xclip -selection clipboard" -automatic-save-to-history
+# power menu
+bindsym $mod+$alt+p exec --no-startup-id rofi -show power -modi "power:rofi-power-menu --choices=shutdown/reboot/suspend/logout"
