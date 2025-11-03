@@ -1,0 +1,32 @@
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+  status_command i3status
+  mode hide
+  tray_output primary
+  colors {
+    focused_workspace #572100 #8A3500 #000000
+  }
+}
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #572100 #8A3500 #000000 #572100   #572100
+client.focused_inactive #000000 #000000 #ffffff #000000   #000000
+client.unfocused        #000000 #000000 #888888 #000000   #000000
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #000000
+
+default_border pixel 3
+default_floating_border pixel 3
+# force border on windows that override them
+for_window [all] border pixel 3
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# zoom notif rules
+for_window [class="zoom" title="zoom"] floating enable
+

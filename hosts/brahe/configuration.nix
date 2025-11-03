@@ -19,15 +19,16 @@
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
       ../../modules/nixos-core
-      ../../modules/i3.nix
       ../../modules/teamviewer.nix
+      ./i3.nix
     ];
 
   home-manager.sharedModules = [ {
       home.packages = with pkgs; [
         qdirstat
         neovim
-	brightnessctl # screen backlight brightness control
+        brightnessctl # screen backlight brightness control
+        nitrogen
       ];
     }
   ];
@@ -37,6 +38,7 @@
 
     imports = [
       ../../modules/hm-main-user-core
+      ../../modules/hm-main-user-dev
       ../../modules/hm-main-user-workstation
       ../../modules/hm-main-user-dev
       ../../modules/rofi.nix
