@@ -42,10 +42,12 @@
     xfce.thunar
 
     # desktop utilities
-    ksnip
     flameshot
     gpick
+    ksnip
+    nitrogen
     pavucontrol
+    qdirstat
 
     # other
     electron

@@ -1,11 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let
-  i3ConfigFiles = [
-    ../configs/i3config
-    ../configs/i3-brahe
-  ];
-in {
+{
   # i3
   services.xserver = {
     enable = true;
@@ -47,13 +42,12 @@ in {
    
     windowManager.i3 = {
       enable = true;
-      # configFile = ../configs/i3config;
-      # configFile = pkgs.writeText "i3config" (lib.concatStringsSep "\n" (map (f: builtins.readFile f) i3ConfigFiles));
+      # configFile moved to /hosts/<host>/i3.nix
       extraPackages = with pkgs; [
-        dmenu #application launcher most people use
-        i3status # gives you the default i3 status bar
-        i3lock #default i3 screen locker
-        i3blocks #if you are planning on using i3blocks over i3status
+        dmenu
+        i3status
+        i3lock
+        i3blocks
       ];
     };
   };

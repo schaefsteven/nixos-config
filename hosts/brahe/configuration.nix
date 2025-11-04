@@ -3,32 +3,30 @@
 {
   networking.hostName = "brahe";
 
-  # services.timesyncd.enable = false;
-
   system.stateVersion = "24.05"; # Should not change after install
-
-  # networking.wireless.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-
-  # home-manager.users = { "usr" = import ./home.nix; };
 
   imports =
     [ ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.sops-nix.nixosModules.sops
+      ../../modules/nas-mounts.nix
       ../../modules/nixos-core
+      ../../modules/sops.nix
+      ../../modules/stylix.nix
       ../../modules/teamviewer.nix
       ./i3.nix
     ];
 
+  # host-specific services
+  services.cloudflare-warp.enable = true;
+
   home-manager.sharedModules = [ {
       home.packages = with pkgs; [
-        qdirstat
-        neovim
+        neovim # I think I did this here so it would be available as sudo
         brightnessctl # screen backlight brightness control
-        nitrogen
       ];
     }
   ];
@@ -51,8 +49,6 @@
 
   };
 
-  services.cloudflare-warp.enable = true;
-
   services.xserver = {
     videoDrivers = [ "modesetting" ];
     displayManager = {
@@ -62,46 +58,14 @@
     };
   };
 
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    defaultSopsFormat = "yaml";
-    age.keyFile = "/home/usr/.config/sops/age/keys.txt";
-    secrets = {
-      "smb_credentials" = {};
-    };
-  };
-  
-  # color schemes themes
-  stylix = { 
-    enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-    image = ../../assets/black.jpg;
-    # imageScalingMode = "center"; # This currently only is supported by sway
-  };
-
-  # NAS mount
-  fileSystems."/mnt/n" = {
-    device = "//192.168.1.2/steven";
-    fsType = "cifs";
-    options = [
-      "x-systemd.automount"
-      "noauto"
-      "x-systemd.idle-timeout=60"
-      "x-systemd.device-timeout=5s"
-      "x-systemd.mount-timeout=5s"
-      "cred=/run/secrets/smb_credentials"
-      "uid=${toString config.users.users.usr.uid}"
-      "gid=${toString config.users.groups.users.gid}"
-    ];
-  };
-
-  # Bootloader
+  # bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
     timeout = 20;
     grub = {
-      # To re-generate Windows grub entry, disable the extraEntries and enable useOSProber, 
-      # then copy the windows menu entry from /boot/grub/grub.cfg into extraEntries.
+      # To re-generate Windows grub entry, disable the extraEntries and enable 
+      # useOSProber, then copy the windows menu entry from /boot/grub/grub.cfg 
+      # into extraEntries.
       useOSProber = false;
       extraEntries = ''
         menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-AC63-F291' {
@@ -120,7 +84,7 @@
     };
   };
 
-  # Enable sound with pipewire.
+  # sound
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
