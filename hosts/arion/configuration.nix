@@ -90,7 +90,7 @@
     ];
   };
 
-# bootloader
+  # bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
     timeout = 20;
