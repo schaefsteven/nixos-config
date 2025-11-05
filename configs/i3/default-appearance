@@ -1,22 +1,61 @@
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+set $dark-text      #000000
+set $light-text     #D5C4A1
+
+set $dark-orange    #572100
+set $light-orange   #8A3500 
+
+set $button         #2E323C
+set $button-act     #9E8C81
+
+set $urgent         #FF0000
+
 bar {
-  status_command i3status
+  output primary
+  status_command i3blocks -c ~/.nix/configs/i3/status-primary
   mode hide
-  tray_output primary
+  padding 2px
   colors {
-    focused_workspace #572100 #8A3500 #000000
+    #                  border           background       text
+    focused_workspace  $light-orange    $light-orange    $dark-text
+    active_workspace   $button-act      $button-act      $dark-text
+    inactive_workspace $button          $button          $light-text
+    urgent_workspace   $urgent          $button          $light-text
+    statusline         $light-text
+    background         #181818
+  }
+  separator_symbol "  "
+  tray_output primary
+  tray_padding 6px
+}
+
+bar {
+  output nonprimary
+  status_command i3blocks -c ~/.nix/configs/i3/status-nonprimary
+  mode hide
+  tray_output none
+  padding 2px 10px 2px 2px
+  colors {
+    #                  border           background       text
+    focused_workspace  $light-orange    $light-orange    $dark-text
+    active_workspace   $button-act      $button-act      $dark-text
+    inactive_workspace $button          $button          $light-text
+    urgent_workspace   $urgent          $button          $light-text
+    statusline         $light-text
+    background         #181818
   }
 }
 
 # Colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #572100 #8A3500 #000000 #572100   #572100
-client.focused_inactive #000000 #000000 #ffffff #000000   #000000
-client.unfocused        #000000 #000000 #888888 #000000   #000000
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #000000
+# class                 border          backgr.         text        indicator       child_border
+client.focused          $dark-orange    $light-orange   $dark-text  $dark-orange    $dark-orange
+client.focused_inactive $dark-text      $dark-text      #ffffff     $dark-text      $dark-text
+client.unfocused        $dark-text      $dark-text      #888888     $dark-text      $dark-text
+client.urgent           #2f343a         #900000         #ffffff     #900000         #900000
+client.placeholder      $dark-text      #0c0c0c         #ffffff     $dark-text      #0c0c0c
+client.background       $dark-text
 
 default_border pixel 3
 default_floating_border pixel 3
@@ -25,7 +64,7 @@ for_window [all] border pixel 3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Hack Nerd Font Mono Extra Bold 8
 
 # zoom notif rules
 for_window [class="zoom" title="zoom"] floating enable

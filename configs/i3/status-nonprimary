@@ -1,0 +1,3 @@
+[hostname]
+command=hostname
+interval=once

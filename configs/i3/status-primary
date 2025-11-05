@@ -1,0 +1,20 @@
+[time]
+command=date '+%I : %M : %S'
+interval=1
+color=#00C085
+
+[hostname]
+command=hostname
+interval=once
+
+[ip]
+command=hostname -I | awk '{print $1}'
+interval=30
+color=#FA8C1F
+
+
+# to add for brahe:
+# battery
+# wifi
+# volume
+# brightness
