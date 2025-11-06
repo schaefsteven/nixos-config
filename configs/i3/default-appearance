@@ -16,7 +16,7 @@ bar {
   output primary
   status_command i3blocks -c ~/.nix/configs/i3/status-primary
   mode hide
-  padding 2px
+  padding 2px 10px 2px 2px
   colors {
     #                  border           background       text
     focused_workspace  $light-orange    $light-orange    $dark-text
