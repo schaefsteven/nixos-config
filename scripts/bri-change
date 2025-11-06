@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+current_bri=$(brightnessctl -m | awk -F, '{ print $4 }' | tr -d '%')
+
+if [[ "${1: -1}" == "+" ]]; then
+  if [ "$current_bri" -lt 5 ]; then
+    brightnessctl -d intel_backlight set 5%
+  else
+    brightnessctl -d intel_backlight set $1
+  fi
+else
+  if [ "$current_bri" -lt 6 ]; then
+    brightnessctl -d intel_backlight set 1
+  else
+    brightnessctl -d intel_backlight set $1
+  fi
+fi
+
+# Notification
+new_bri=$(brightnessctl -m | awk -F, '{ print $4 }' | tr -d '%')
+dunstify "Brightness: $new_bri" -h "int:value:$new_bri" -r 6000 -t 700

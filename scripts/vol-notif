@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+muted=$(pactl get-sink-mute @DEFAULT_SINK@)
+
+if echo "$muted" | grep -q "yes"; then
+  dunstify "Muted" -t 500 -r 5000
+else
+  pactl get-sink-volume @DEFAULT_SINK@ | 
+  awk -F'[ /%]+' '{print $4}' | 
+  xargs -I{} dunstify -h int:value:"{}" "Volume: {}%" -t 700 -r 5000
+fi

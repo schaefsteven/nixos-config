@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+muted=$(pactl get-sink-mute @DEFAULT_SINK@)
+current_vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'[ /%]+' '{print $4}')
+
+if echo "$muted" | grep -q "yes"; then
+  # We are muted. Unmute and set to 10%
+  pactl set-sink-volume @DEFAULT_SINK@ 10%
+  pactl set-sink-mute @DEFAULT_SINK@ 0
+  echo "muted"
+else
+  # Volume up
+  if [[ "${1:0:1}" == "+" ]]; then
+    if [ "$current_vol" -lt 150 ]; then
+    pactl set-sink-volume @DEFAULT_SINK@ $1%
+  fi
+
+  # Volume down
+  elif [[ "${1:0:1}" == "-" ]]; then
+  pactl set-sink-volume @DEFAULT_SINK@ $1%
+  fi
+  
+  echo "$current_vol"
+fi
+
+# Notification
+/home/usr/.nix/scripts/vol-notif
