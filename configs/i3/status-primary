@@ -22,16 +22,18 @@ command=date '+%I : %M : %S'
 interval=1
 color=#00C085
 
+[time]
+command=date '+%a %Y/%m/%d'
+interval=30
+color=#BC5A90
+
 [hostname]
 command=hostname
 interval=once
+color=#FA8C1F
 
 [ip]
 command=hostname -I | awk '{print $1}'
 interval=30
-color=#FA8C1F
+color=#2381CA
 
-# to add for brahe:
-# wifi
-# volume
-# brightness

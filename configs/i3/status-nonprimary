@@ -1,3 +1,4 @@
 [hostname]
 command=hostname
 interval=once
+color=#FA8C1F
