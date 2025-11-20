@@ -22,6 +22,7 @@
     jq
     lolcat
     nmap
+    playerctl
     python3
     python312Packages.pip
     ranger
