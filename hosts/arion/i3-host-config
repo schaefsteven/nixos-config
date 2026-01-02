@@ -35,3 +35,6 @@ workspace $wsMain output $monCenter
 bindsym $mod+Control+space move workspace to output $monCenter
 bindsym $mod+Control+q move workspace to output $monLeft
 bindsym $mod+Control+y move workspace to output $monRight
+
+# pin keymap-overlay to main monitor
+for_window [title="ss-keymap-overlay"] move to output $monCenter, sticky enable

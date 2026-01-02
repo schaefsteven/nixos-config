@@ -43,6 +43,7 @@
     xfce.thunar
 
     # desktop utilities
+    feh
     flameshot
     gpick
     ksnip

@@ -19,3 +19,8 @@ bindsym $mod+$alt+p exec --no-startup-id rofi -show power -modi "power:rofi-powe
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# keybind-overlay
+bindsym $mod+Escape exec --no-startup-id feh ~/.nix/assets/keymap-overlay.png --title "ss-keymap-overlay"
+bindsym --release $mod+Escape exec --no-startup-id pkill -f "feh.*keymap-overlay"
+
