@@ -21,6 +21,6 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # keybind-overlay
-bindsym $mod+Escape exec --no-startup-id feh ~/.nix/assets/keymap-overlay.png --title "ss-keymap-overlay"
+bindsym $mod+Escape exec --no-startup-id bash -c "xdotool search --name 'ss-keymap-overlay' >/dev/null 2>&1 || feh ~/.nix/assets/keymap-overlay.png --title 'ss-keymap-overlay'"
 bindsym --release $mod+Escape exec --no-startup-id pkill -f "feh.*keymap-overlay"
 
