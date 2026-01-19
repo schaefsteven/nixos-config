@@ -105,6 +105,7 @@ evdev:input:b0003v1915p1028*
   
       # desktop utilities
       pavucontrol
+      unclutter
     ];
 
     home.file.".config/bashmount/config" = {

@@ -25,7 +25,7 @@
       ''
         Identifier "General Keyboards" 
         MatchIsKeyboard "on"
-        MatchVendor "Dell|dell|Logitech|logitech"
+        MatchVendor "Dell|dell|Logitech|logitech|"
         Option "XkbOptions" "ctrl:nocaps,shift:both_capslock,altwin:swap_alt_win"
       ''
       ''
@@ -33,6 +33,12 @@
         MatchIsKeyboard "on"
         MatchProduct "AT Translated Set 2 keyboard"
         Option "XkbOptions" "ctrl:nocaps,shift:both_capslock,altwin:swap_alt_win"
+      ''
+      ''
+        Identifier "Rii mini TV remote" 
+        MatchIsKeyboard "on"
+        MatchProduct "123 COM Smart Control"
+        Option "XkbOptions" "altwin:swap_alt_win"
       ''
     ];
 
