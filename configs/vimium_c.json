@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "9/5/2025, 11:11:42 PM",
-	"time": 1757128302549,
+	"@time": "2/4/2026, 10:54:16 AM",
+	"time": 1770220456513,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 140
+		"firefox": 145
 	},
 	"exclusionRules": [
 		{
@@ -35,6 +35,10 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://keyboardchecker.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://keyboard-tester.com/"
 		}
 	],
 	"keyLayout": 2,
@@ -56,6 +60,7 @@
 		""
 	],
 	"newTabUrl": "https://yooper.cc",
+	"omniBlockList": "$base64:dHdpdGNoLnRm",
 	"searchEngines": [
 		"nixo: https://search.nixos.org/options?channel=unstable&query=$s NixOS Options",
 		"",
