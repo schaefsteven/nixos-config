@@ -18,6 +18,7 @@
       ../../modules/sops.nix
       ../../modules/stylix.nix
       ../../modules/teamviewer.nix
+      ../../modules/obs.nix
       ./i3.nix
     ];
 

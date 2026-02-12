@@ -10,7 +10,7 @@
     # desktop apps
     blender-hip
     libreoffice
-    obs-studio
+    # obs-studio # moved to module
     orca-slicer
     vlc
     zoom-us
