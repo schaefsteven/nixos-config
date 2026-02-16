@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "2/4/2026, 10:54:16 AM",
-	"time": 1770220456513,
+	"@time": "2/16/2026, 7:26:16 AM",
+	"time": 1771244776865,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
@@ -60,7 +60,11 @@
 		""
 	],
 	"newTabUrl": "https://yooper.cc",
-	"omniBlockList": "$base64:dHdpdGNoLnRm",
+	"omniBlockList": [
+		"$base64:dHdpdGNoLnRm",
+		"$base64:bW9ua2V5LXR5cGUub3Jn",
+		""
+	],
 	"searchEngines": [
 		"nixo: https://search.nixos.org/options?channel=unstable&query=$s NixOS Options",
 		"",
