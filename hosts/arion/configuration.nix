@@ -20,6 +20,7 @@
       ../../modules/teamviewer.nix
       ../../modules/obs.nix
       ./i3.nix
+      ./ollama.nix
     ];
 
   # host-specific services

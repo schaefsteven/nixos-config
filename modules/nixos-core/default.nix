@@ -13,6 +13,7 @@
     base16-schemes # for use with stylix
     cifs-utils # for mounting NAS, etc
     gcc
+    pciutils
     pulseaudio
     ripgrep # dependency of Telescope for Nvim
     usbutils # lsusb
