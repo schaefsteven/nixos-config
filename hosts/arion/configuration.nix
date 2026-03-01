@@ -21,6 +21,7 @@
       ../../modules/obs.nix
       ./i3.nix
       ./ollama.nix
+      ./minecraft-server.nix
     ];
 
   # host-specific services
