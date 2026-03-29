@@ -47,6 +47,7 @@
         qdirstat
         neovim
         nitrogen
+        prismlauncher
       ];
     }
   ];
