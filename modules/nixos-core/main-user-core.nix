@@ -6,7 +6,7 @@
     isNormalUser = true;
     uid = 1000;
     description = "usr";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "minecraft" ];
   };
 
   users.groups.users = {

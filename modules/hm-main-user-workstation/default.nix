@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # terminal apps
+    ffmpeg
     pandoc
     texliveTeTeX
     # ventoy-full # designated insecure because of binary blobs
