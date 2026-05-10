@@ -43,6 +43,7 @@
 
     home.packages = with pkgs; [
       framework-tool
+      prismlauncher
     ];
 
     programs.alacritty.settings.font.size = lib.mkForce 8;

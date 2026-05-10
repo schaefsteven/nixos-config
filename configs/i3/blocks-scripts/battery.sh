@@ -21,7 +21,7 @@
 #  MA 02110-1301, USA.
 #  
 #  
-readarray -t output <<< $(acpi battery)
+readarray -t output <<< $(acpi battery | grep '^Battery 1:' || acpi battery | grep '^Battery 0:')
 battery_count=${#output[@]}
 
 for line in "${output[@]}";
