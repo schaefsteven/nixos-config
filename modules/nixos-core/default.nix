@@ -76,6 +76,8 @@
     backupFileExtension = "backup";
   };
 
+  programs.xfconf.enable = true; # need this for thunar preferences to work
+
   networking.networkmanager.enable = true;
 
   services.printing.enable = true;
