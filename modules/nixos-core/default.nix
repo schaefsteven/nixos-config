@@ -80,7 +80,10 @@
 
   networking.networkmanager.enable = true;
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    cups-pdf.enable = true;
+  };
 
   time.timeZone = "US/Eastern";
 
