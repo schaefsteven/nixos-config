@@ -48,6 +48,7 @@
         neovim
         nitrogen
         prismlauncher
+        space-cadet-pinball
       ];
     }
   ];
