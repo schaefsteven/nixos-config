@@ -9,7 +9,8 @@
     # ventoy-full # designated insecure because of binary blobs
 
     # desktop apps
-    blender-hip
+    # blender-hip # removed
+    pkgsRocm.blender
     libreoffice
     # obs-studio # moved to module
     orca-slicer

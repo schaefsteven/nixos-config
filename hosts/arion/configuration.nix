@@ -46,7 +46,7 @@
       home.packages = with pkgs; [
         qdirstat
         neovim
-        nitrogen
+        # nitrogen # depreciated
         prismlauncher
         space-cadet-pinball
       ];
@@ -69,6 +69,7 @@
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
     displayManager = {
+      # removed ${pkgs.nitrogen}/bin/nitrogen --restore from setupCommands - nitrogen is depreciated.
       setupCommands = ''
         LEFT='HDMI-A-1'
         CENTER='DisplayPort-0'
@@ -79,7 +80,6 @@
         ${pkgs.xorg.xrandr}/bin/xrandr --output $LEFT --pos 0x0
         ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --pos 1350x0
         ${pkgs.xorg.xrandr}/bin/xrandr --output $RIGHT --pos 5190x0
-	${pkgs.nitrogen}/bin/nitrogen --restore
       '';
     };
   };

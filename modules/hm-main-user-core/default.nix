@@ -47,7 +47,7 @@
     flameshot
     gpick
     ksnip
-    nitrogen
+    # nitrogen # depreciated
     pavucontrol
     qdirstat
 
