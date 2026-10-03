@@ -61,12 +61,13 @@
 
   # bootloader
   boot.loader = {
-    efi.canTouchEfiVariables = true;
+    efi.canTouchEfiVariables = false;
     timeout = 20;
     grub = {
       # To re-generate Windows grub entry, disable the extraEntries and enable 
       # useOSProber, then copy the windows menu entry from /boot/grub/grub.cfg 
       # into extraEntries.
+      enable = true;
       useOSProber = false;
       extraEntries = ''
         menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-AC63-F291' {
@@ -76,7 +77,7 @@
           chainloader /EFI/Microsoft/Boot/bootmgfw.efi
         }
         '';
-      enable = true;
+      efiInstallAsRemovable = true;
       efiSupport = true;
       device = "nodev";
       gfxmodeEfi = "2560x1440";
