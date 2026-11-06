@@ -16,7 +16,7 @@
       ../../modules/nixos-core
       ../../modules/sops.nix
       ../../modules/stylix.nix
-      ../../modules/teamviewer.nix
+      #../../modules/teamviewer.nix
       ./i3.nix
     ];
 
